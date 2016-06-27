@@ -19698,15 +19698,93 @@ var React = require('react'),
 
 var app = function app() {
 
-	var Header = React.createClass({
-		displayName: 'Header',
+    var HomeContainer = React.createClass({
+        displayName: 'HomeContainer',
 
-		render: function render() {
-			return React.createElement('h1', null, 'YOLO');
-		}
-	});
+        render: function render() {
+            return React.createElement('div', { id: 'homeContainer', __self: this
+            }, React.createElement(Header, {
+                __self: this
+            }), React.createElement(ContainerInside, {
+                __self: this
+            }), React.createElement(NeverMiss, {
+                __self: this
+            }));
+        }
+    });
 
-	ReactDOM.render(React.createElement(Header, null), document.querySelector('.container'));
+    var Header = React.createClass({
+        displayName: 'Header',
+
+        render: function render() {
+            return React.createElement('div', { id: 'header', __self: this
+            }, React.createElement('img', { id: 'houston', src: 'http://magentanova.github.io/html-intro-1/images/houston.jpg', __self: this
+            }), React.createElement('img', { id: 'logo', src: 'http://magentanova.github.io/html-intro-1/images/ironyardlogo.png', __self: this
+            }));
+        }
+
+    });
+
+    var ContainerInside = React.createClass({
+        displayName: 'ContainerInside',
+
+        render: function render() {
+            return React.createElement('div', { id: 'containerInside', __self: this
+            }, React.createElement('div', { className: 'colLeft', __self: this
+            }, React.createElement('p', {
+                __self: this
+            }, React.createElement('strong', {
+                __self: this
+            }, 'THE IRON YARD HOUSTON')), React.createElement('p', { id: 'greyPart', __self: this
+            }, ' Happenings and updates from the Iron Yard in Houston, TX '), React.createElement('hr', { width: '100%', align: 'center', color: '#ABB7B7', __self: this
+            }), React.createElement('p', { id: 'greyPart', __self: this
+            }, ' SEARCH '), React.createElement('input', { type: 'text', placeholder: 'Search Keywords', required: true, __self: this
+            })), React.createElement('div', { className: 'colRight', __self: this
+            }, React.createElement('h1', {
+                __self: this
+            }, 'September 22 Starts a New Class of the Iron Yard Houston Students'), React.createElement('p', {
+                __self: this
+            }, React.createElement('i', {
+                __self: this
+            }, 'By Brian Dorton, campus director at ', React.createElement('a', { HREF: 'http://www.theironyard.com', __self: this
+            }, 'The Iron Yard'), ' Houston')), React.createElement('img', { id: 'classroom', src: 'http://magentanova.github.io/html-intro-1/images/classroom.jpg', __self: this
+            }), React.createElement('p', {
+                __self: this
+            }, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum voluptatibus temporibus quaerat quasi ipsam nemo quae minus quos possimus officiis. Et eligendi nesciunt maxime dolores eaque omnis enim iure aliquid.')));
+        }
+
+    });
+
+    var NeverMiss = React.createClass({
+        displayName: 'NeverMiss',
+
+        render: function render() {
+            return React.createElement('div', { id: 'neverMiss', __self: this
+            }, React.createElement('div', { id: 'neverMiss1-2', __self: this
+            }, React.createElement('p', {
+                __self: this
+            }, React.createElement('b', {
+                __self: this
+            }, 'Never miss a post!'))), React.createElement('div', { id: 'neverMiss2-2', __self: this
+            }, React.createElement('div', { className: 'follow_logo', __self: this
+            }, React.createElement('img', { id: 'neverMissLogo', src: 'http://magentanova.github.io/html-intro-1/images/ironyardlogo.png', __self: this
+            })), React.createElement('div', { className: 'follow_txt', __self: this
+            }, React.createElement('p', {
+                __self: this
+            }, React.createElement('strong', {
+                __self: this
+            }, ' tiyhouston ')), React.createElement('p', { id: 'greyPart', __self: this
+            }, 'The Iron Yard Houston')), React.createElement('div', { className: 'follow_btn', __self: this
+            }, React.createElement('button', {
+                __self: this
+            }, '+ Follow '))));
+        }
+
+    });
+
+    ReactDOM.render(React.createElement(HomeContainer, {
+        __self: this
+    }), document.querySelector('.container'));
 };
 
 app();
